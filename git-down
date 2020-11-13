@@ -1,0 +1,4 @@
+#!/bin/sh
+git root
+git fetch --prune | tee /dev/tty | grep '\- \[deleted\]' | sed -e 's!.*-> [^\/]*/\(.*\)!\1!' | xargs -r git branch -D
+git root
